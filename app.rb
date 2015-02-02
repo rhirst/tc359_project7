@@ -2,7 +2,7 @@
 require 'sinatra'
 
 class MyWebApp < Sinatra::Base
-  get '/' do
-    "Future construction site.  Fabolous content to come! Copyright 2014-#{ Time.now.year } Ryan Hirst."
-  end
+	get '/' do
+  	send_file 'views/index.html'
+	end
 end
