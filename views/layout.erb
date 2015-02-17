@@ -33,12 +33,21 @@
           <%= yield %>
         </div>
         <div class="col-md-4 ">
+          <div class ="holidaylist">
+            <h1>Holidays</h1>
+            <ul>
+              <% @Holidata.each do |holiday| %>
+              <li><%= holiday["name"] %></li>
+              <% end %>
+            </ul>
+             <h1>Holidays from my Birthday Month</h1>
+            <ul>
+              <% @Bdata.each do |holiday| %>
+              <li><%= holiday["name"] %></li>
+              <% end %>
+            </ul>
+          </div>
           
-          <p>Sed non diam sit amet nunc pharetra fringilla. Aenean ac bibendum dolor, a interdum lacus. Duis nunc libero, tristique consectetur mattis eu, finibus sit amet dolor. Aenean tempus mauris sed rhoncus aliquam. Fusce consequat diam sed sem auctor, eu aliquet nulla scelerisque. Sed malesuada ipsum leo. Cras scelerisque sapien ut ipsum faucibus, nec condimentum arcu aliquet. Etiam tincidunt velit vel lorem commodo, ut cursus nisl sodales.
-
-          Proin vel maximus massa, id consequat felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus egestas justo sed vulputate accumsan. Pellentesque posuere dolor vitae justo interdum dignissim. Aliquam enim justo, varius mattis mattis ultricies, luctus ac mauris. Aenean sit amet velit tincidunt, lobortis odio sit amet, pharetra libero. Sed tincidunt, lorem vel eleifend tempor, nulla erat sollicitudin libero, at pellentesque ipsum urna ac ipsum. Donec ultrices convallis metus, non semper leo tincidunt sed. Donec lacinia metus quis viverra pharetra.
-
-          Aenean vitae nunc convallis, facilisis nunc eget, mattis orci. Proin ornare auctor nibh at pretium. Fusce tempor sed risus quis tristique. In ipsum ipsum, euismod a velit ut, pharetra faucibus diam. Integer sodales iaculis mauris, vel semper dui efficitur aliquet. Donec auctor elementum mauris a tempor. Nulla tempor vitae lorem quis fermentum. Praesent nec odio justo. Cras semper, diam sed posuere pharetra, massa mauris lobortis lacus, sit amet euismod lorem dolor bibendum lacus. Curabitur egestas luctus tellus nec venenatis. Maecenas egestas ligula eget nisi faucibus, eu luctus tortor pulvinar. Donec rhoncus dignissim nibh, ut dictum erat ornare non. Praesent et erat maximus sapien hendrerit feugiat.</p>
         </div>
       </div>
     </div>
