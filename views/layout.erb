@@ -31,10 +31,34 @@
       <div class="row">
         <div class="col-md-8 ">
           <%= yield %>
+          <form>
+            <select name="holiday_country" class="form-control" value ="<%= params['holiday_country']%>">
+              <option <%= 'selected="selected"' if params['holiday_country'] == 'US' %> value="US">United States</option>
+              <option <%= 'selected="selected"' if params['holiday_country'] == 'BE' %>value="BE">Belgium</option>
+              <option <%= 'selected="selected"' if params['holiday_country'] == 'BR' %>value="BR">Brazil</option>
+              <option value="GB">Great Britain</option>
+            <input name="holiday_year" type = "number" min = "1000" max ="<%= Time.now.year %>" value ="<%= params['holiday_year']%>">
+            <select name="holiday_month" class="form-control" value ="<%= params['holiday_month']%>">
+              <option <%= 'selected="selected"' if params['holiday_month'] == '1' %>value="1">Jan</option>
+              <option <%= 'selected="selected"' if params['holiday_month'] == '2' %>value="2">Feb</option>
+              <option <%= 'selected="selected"' if params['holiday_month'] == '3' %>value="3">Mar</option>
+              <option <%= 'selected="selected"' if params['holiday_month'] == '4' %>value="4">Apr</option>
+              <option <%= 'selected="selected"' if params['holiday_month'] == '5' %>value="5">May</option>
+              <option <%= 'selected="selected"' if params['holiday_month'] == '6' %>value="6">Jun</option>
+              <option <%= 'selected="selected"' if params['holiday_month'] == '7' %>value="7">Jul</option>
+              <option <%= 'selected="selected"' if params['holiday_month'] == '8' %>value="8">Aug</option>
+              <option <%= 'selected="selected"' if params['holiday_month'] == '9' %>value="9">Sep</option>
+              <option <%= 'selected="selected"' if params['holiday_month'] == '10' %>value="10">Oct</option>
+              <option <%= 'selected="selected"' if params['holiday_month'] == '11' %>value="11">Nov</option>
+              <option <%= 'selected="selected"' if params['holiday_month'] == '12' %>value="12">Dec</option>
+            </select>
+            <button type="submit">Click me for Holidays!</button>
+          </form>
         </div>
         <div class="col-md-4 ">
           <div class ="holidaylist">
-            <h1>Holidays</h1>
+            <h1>Holidays for <%= params['holiday_country'] %></h1>
+            <h2><%= params['holiday_month'] %>-<%= params['holiday_year'] %></h2>
             <ul>
               <% @Holidata.each do |holiday| %>
               <li><%= holiday["name"] %></li>
